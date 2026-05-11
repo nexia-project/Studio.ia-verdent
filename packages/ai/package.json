@@ -8,13 +8,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@studyai/types": "workspace:*",
-    "@studyai/db": "workspace:*",
+    "@studyai/types": "*",
+    "@studyai/db": "*",
     "ioredis": "^5.4.0",
     "openai": "^4.47.0"
   },
   "devDependencies": {
-    "@studyai/config": "workspace:*",
+    "@studyai/config": "*",
     "@types/node": "^20.0.0",
     "typescript": "^5.4.0"
   }
