@@ -1,0 +1,4 @@
+# Railway Configuration
+# Force npm usage - no pnpm
+NODE_ENV=production
+NIXPACKS_PM=npm
