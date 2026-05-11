@@ -27,7 +27,7 @@ export function StudentDashboard() {
         </p>
       </div>
 
-      <!-- Quick Actions -->
+      {/* Quick Actions */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {quickActions.map((action) => (
           <Link key={action.name} to={action.href}>
@@ -44,7 +44,7 @@ export function StudentDashboard() {
         ))}
       </div>
 
-      <!-- Stats -->
+      {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat) => (
           <Card key={stat.name}>
@@ -60,7 +60,7 @@ export function StudentDashboard() {
         ))}
       </div>
 
-      <!-- Recent Activity -->
+      {/* Recent Activity */}
       <Card>
         <CardHeader>
           <CardTitle>Atividade Recente</CardTitle>

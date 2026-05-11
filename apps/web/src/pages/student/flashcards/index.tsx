@@ -168,7 +168,7 @@ export function FlashcardsPage() {
         </div>
       </div>
 
-      <!-- Progresso -->
+      {/* Progresso */}
       <div className="space-y-2">
         <div className="flex justify-between text-sm">
           <span>Progresso da sessão</span>
@@ -177,7 +177,7 @@ export function FlashcardsPage() {
         <Progress value={progress} />
       </div>
 
-      <!-- Card principal -->
+      {/* Card principal */}
       <Card className="min-h-[300px] flex flex-col">
         <CardContent className="flex-1 flex flex-col items-center justify-center p-8">
           <div className="text-center space-y-4">
@@ -230,7 +230,7 @@ export function FlashcardsPage() {
         </CardContent>
       </Card>
 
-      <!-- Stats do card atual -->
+      {/* Stats do card atual */}
       <div className="flex justify-center gap-4 text-sm text-muted-foreground">
         <span>Repetições: {currentCard.repetitions}</span>
         <span>•</span>
