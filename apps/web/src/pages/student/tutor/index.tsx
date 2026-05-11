@@ -1,11 +1,13 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Send, Mic, Bot, User, Zap, Lightbulb, Target } from 'lucide-react'
+import { Send, Mic, Bot, User, Zap, Lightbulb, Target, Wrench } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 import { Foco5Min } from '@/components/tutor/foco-5min'
 import { DesafioOrganizacao } from '@/components/tutor/desafio-organizacao'
 import { AulaAtivaTracker } from '@/components/tutor/aula-ativa-tracker'
+import { BotaoDesafioFazedor, CardDesafioFazedorNoChat } from '@/components/tutor/integracao-fazedores'
+import { useDesafioUnico } from '@/hooks/useFazedores'
 
 interface Message {
   id: string
@@ -191,6 +193,21 @@ export function TutorPage() {
             <Lightbulb className="h-4 w-4 mr-2" />
             Desafio
           </Button>
+          <BotaoDesafioFazedor 
+            topicoAtual={messages[messages.length - 1]?.content}
+            onDesafioRecebido={(desafio) => {
+              setMessages((prev) => [
+                ...prev,
+                {
+                  id: Date.now().toString(),
+                  role: 'assistant',
+                  content: desafio.conteudo,
+                  tipo: 'fazedor',
+                  metadata: desafio,
+                },
+              ]);
+            }}
+          />
         </div>
       </div>
 
