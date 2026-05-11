@@ -3,6 +3,7 @@ import { LandingPage } from './pages/landing'
 import { StudentLogin, TeacherLogin, InstitutionLogin, GovernmentLogin } from './pages/auth'
 import { StudentDashboard } from './pages/student/dashboard'
 import { TutorPage } from './pages/student/tutor'
+import { FazedoresPage } from './pages/student/fazedores'
 import { TeacherDashboard } from './pages/teacher/dashboard'
 import { InstitutionDashboard } from './pages/institution/dashboard'
 import { GovernmentDashboard } from './pages/government/dashboard'
@@ -33,6 +34,7 @@ export const router = createBrowserRouter([
         children: [
           { path: '', element: <StudentDashboard /> },
           { path: 'tutor', element: <TutorPage /> },
+          { path: 'fazedores', element: <FazedoresPage /> },
         ],
       },
       {

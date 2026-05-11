@@ -5,13 +5,15 @@ import {
   BookOpen, 
   Brain,
   Trophy,
-  Settings 
+  Settings,
+  Wrench,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navigation = [
   { name: 'Dashboard', href: '/aluno', icon: Home },
   { name: 'Tutor IA', href: '/aluno/tutor', icon: MessageCircle },
+  { name: 'Fazedores', href: '/aluno/fazedores', icon: Wrench },
   { name: 'Caderno', href: '/aluno/caderno', icon: BookOpen },
   { name: 'Flashcards', href: '/aluno/flashcards', icon: Brain },
   { name: 'Conquistas', href: '/aluno/conquistas', icon: Trophy },

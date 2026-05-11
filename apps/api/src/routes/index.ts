@@ -3,6 +3,7 @@ import { authRouter } from './auth.routes';
 import { webhooksRouter } from './webhooks.routes';
 import { tutorRouter } from './tutor.routes';
 import { tutorModulosRouter } from './tutor-modulos.routes';
+import { fazedoresRouter } from './fazedores.routes';
 import { studyRouter } from './study.routes';
 import { teacherRouter } from './teacher.routes';
 import { institutionRouter } from './institution.routes';
@@ -22,6 +23,7 @@ router.use('/auth', authRouter);
 router.use('/webhooks', webhooksRouter);
 router.use('/tutor', tutorRouter);
 router.use('/tutor', tutorModulosRouter); // Novos módulos do Tiagão
+router.use('/fazedores', fazedoresRouter); // Módulo Fazedores
 router.use('/study', studyRouter);
 router.use('/teacher', teacherRouter);
 router.use('/institution', institutionRouter);
