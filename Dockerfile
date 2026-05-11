@@ -9,7 +9,7 @@ COPY turbo.json ./
 COPY packages ./packages
 COPY apps ./apps
 
-# Install dependencies
+# Install dependencies with npm
 RUN npm install
 
 # Build the application

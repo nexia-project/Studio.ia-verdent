@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "StudyAI - Plataforma de ensino com IA",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
