@@ -113,7 +113,7 @@ export function FazedoresPage() {
         </p>
       </div>
 
-      <!-- Estatísticas -->
+      {/* Estatísticas */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
           { label: 'Desafios Completos', valor: '0', icone: Trophy },
@@ -131,7 +131,7 @@ export function FazedoresPage() {
         ))}
       </div>
 
-      <!-- Categorias -->
+      {/* Categorias */}
       <div>
         <h2 className="text-lg font-semibold mb-4">Escolha uma categoria:</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -155,7 +155,7 @@ export function FazedoresPage() {
         </div>
       </div>
 
-      <!-- Lista de Desafios -->
+      {/* Lista de Desafios */}
       <div>
         <h2 className="text-lg font-semibold mb-4">Desafios Disponíveis:</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -196,7 +196,7 @@ export function FazedoresPage() {
         </div>
       </div>
 
-      <!-- Para Professores -->
+      {/* Para Professores */}
       <Card className="bg-muted/50">
         <CardHeader>
           <div className="flex items-center gap-2">

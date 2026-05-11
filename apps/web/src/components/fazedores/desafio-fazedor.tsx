@@ -212,7 +212,7 @@ export function DesafioFazedor({ desafio, onComplete, onSkip }: DesafioFazedorPr
           </span>
         </div>
 
-        <!-- Progresso -->
+        {/* Progresso */}
         <div className="flex gap-1 mt-2">
           {etapas.map((_, i) => (
             <div

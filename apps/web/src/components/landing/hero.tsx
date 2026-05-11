@@ -43,7 +43,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <!-- Hero Image / Demo -->
+          {/* Hero Image / Demo */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
