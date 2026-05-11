@@ -27,8 +27,8 @@
     "@radix-ui/react-tabs": "^1.0.0",
     "@radix-ui/react-toast": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.0.0",
-    "@studyai/sdk": "workspace:*",
-    "@studyai/types": "workspace:*",
+    "@studyai/sdk": "*",
+    "@studyai/types": "*",
     "@tanstack/react-query": "^5.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -45,7 +45,7 @@
     "zustand": "^4.5.0"
   },
   "devDependencies": {
-    "@studyai/config": "workspace:*",
+    "@studyai/config": "*",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.2.0",

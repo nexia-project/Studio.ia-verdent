@@ -12,12 +12,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@studyai/types": "workspace:*",
+    "@studyai/types": "*",
     "drizzle-orm": "^0.31.0",
     "postgres": "^3.4.0"
   },
   "devDependencies": {
-    "@studyai/config": "workspace:*",
+    "@studyai/config": "*",
     "drizzle-kit": "^0.22.0",
     "tsx": "^4.11.0",
     "typescript": "^5.4.0"
