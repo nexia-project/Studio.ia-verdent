@@ -1,28 +1,28 @@
-import type { ToolDefinition } from './openrouter';
+import type { ToolDefinition } from '../openrouter';
 
 // Import all tool definitions
-import { explainConceptTool, executeExplainConcept } from './tools/explain-concept';
-import { solveExerciseTool, executeSolveExercise } from './tools/solve-exercise';
-import { generateQuizTool, executeGenerateQuiz } from './tools/generate-quiz';
-import { createFlashcardTool, executeCreateFlashcard } from './tools/create-flashcard';
-import { generateMindmapTool, executeGenerateMindmap } from './tools/generate-mindmap';
-import { correctEssayTool, executeCorrectEssay } from './tools/correct-essay';
-import { createStudyPlanTool, executeCreateStudyPlan } from './tools/create-study-plan';
-import { simulateExamTool, executeSimulateExam } from './tools/simulate-exam';
-import { searchKnowledgeTool, executeSearchKnowledge } from './tools/search-knowledge';
-import { summarizeContentTool, executeSummarizeContent } from './tools/summarize-content';
-import { generateImageTool, executeGenerateImage } from './tools/generate-image';
-import { textToSpeechTool, executeTextToSpeech } from './tools/text-to-speech';
-import { speechToTextTool, executeSpeechToText } from './tools/speech-to-text';
-import { generateSlidesTool, executeGenerateSlides } from './tools/generate-slides';
-import { createActivityTool, executeCreateActivity } from './tools/create-activity';
-import { analyzePerformanceTool, executeAnalyzePerformance } from './tools/analyze-performance';
-import { suggestResourcesTool, executeSuggestResources } from './tools/suggest-resources';
-import { explainWithAnalogyTool, executeExplainWithAnalogy } from './tools/explain-with-analogy';
-import { createTimelineTool, executeCreateTimeline } from './tools/create-timeline';
-import { debateTopicTool, executeDebateTopic } from './tools/debate-topic';
-import { motivateStudentTool, executeMotivateStudent } from './tools/motivate-student';
-import { trackProgressTool, executeTrackProgress } from './tools/track-progress';
+import { explainConceptTool, executeExplainConcept } from './explain-concept';
+import { solveExerciseTool, executeSolveExercise } from './solve-exercise';
+import { generateQuizTool, executeGenerateQuiz } from './generate-quiz';
+import { createFlashcardTool, executeCreateFlashcard } from './create-flashcard';
+import { generateMindmapTool, executeGenerateMindmap } from './generate-mindmap';
+import { correctEssayTool, executeCorrectEssay } from './correct-essay';
+import { createStudyPlanTool, executeCreateStudyPlan } from './create-study-plan';
+import { simulateExamTool, executeSimulateExam } from './simulate-exam';
+import { searchKnowledgeTool, executeSearchKnowledge } from './search-knowledge';
+import { summarizeContentTool, executeSummarizeContent } from './summarize-content';
+import { generateImageTool, executeGenerateImage } from './generate-image';
+import { textToSpeechTool, executeTextToSpeech } from './text-to-speech';
+import { speechToTextTool, executeSpeechToText } from './speech-to-text';
+import { generateSlidesTool, executeGenerateSlides } from './generate-slides';
+import { createActivityTool, executeCreateActivity } from './create-activity';
+import { analyzePerformanceTool, executeAnalyzePerformance } from './analyze-performance';
+import { suggestResourcesTool, executeSuggestResources } from './suggest-resources';
+import { explainWithAnalogyTool, executeExplainWithAnalogy } from './explain-with-analogy';
+import { createTimelineTool, executeCreateTimeline } from './create-timeline';
+import { debateTopicTool, executeDebateTopic } from './debate-topic';
+import { motivateStudentTool, executeMotivateStudent } from './motivate-student';
+import { trackProgressTool, executeTrackProgress } from './track-progress';
 
 // Export all tool definitions
 export const tools: ToolDefinition[] = [

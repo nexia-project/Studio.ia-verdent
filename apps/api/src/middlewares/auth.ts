@@ -1,9 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { ClerkExpressRequireAuth } from '@clerk/clerk-sdk-node';
-import { env } from '../config/env';
 
 export const authMiddleware = ClerkExpressRequireAuth({
-  secretKey: env.CLERK_SECRET_KEY,
   onError: (error) => {
     console.error('Auth error:', error);
   },

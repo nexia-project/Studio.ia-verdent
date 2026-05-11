@@ -72,4 +72,21 @@ export async function* streamCompletion(options: CompletionOptions) {
   }
 }
 
+export async function callLLM({ 
+  system, 
+  messages 
+}: { 
+  system: string; 
+  messages: Array<{ role: string; content: string }> 
+}): Promise<string> {
+  const response = await openai.chat.completions.create({
+    model: 'openai/gpt-4o-mini',
+    messages: [
+      { role: 'system', content: system },
+      ...messages,
+    ] as any,
+  });
+  return response.choices[0]?.message?.content ?? '';
+}
+
 export { openai };
