@@ -1,0 +1,15 @@
+{
+  "name": "@studyai/config",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./eslint.config.js",
+  "exports": {
+    "./eslint": "./eslint.config.js",
+    "./prettier": "./prettier.config.js",
+    "./tsconfig": "./tsconfig.base.json"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}
