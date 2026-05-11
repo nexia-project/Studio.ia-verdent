@@ -1,4 +1,4 @@
-name: Generate Lockfile
+name: Generate Complete Lockfile
 
 on:
   push:
@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -21,19 +23,34 @@ jobs:
       with:
         version: 9
     
-    - name: Clean pnpm cache
-      run: pnpm store prune
+    - name: Clean everything
+      run: |
+        rm -f pnpm-lock.yaml
+        rm -rf node_modules
+        rm -rf apps/*/node_modules
+        rm -rf packages/*/node_modules
     
-    - name: Remove old lockfile
-      run: rm -f pnpm-lock.yaml
+    - name: Generate fresh pnpm-lock.yaml
+      run: |
+        pnpm install --no-frozen-lockfile
+        echo "Lockfile generated successfully"
+        ls -la pnpm-lock.yaml
+        wc -l pnpm-lock.yaml
     
-    - name: Generate pnpm-lock.yaml
-      run: pnpm install --no-frozen-lockfile
+    - name: Verify lockfile
+      run: |
+        if [ -s pnpm-lock.yaml ]; then
+          echo "Lockfile is not empty"
+          head -50 pnpm-lock.yaml
+        else
+          echo "Lockfile is empty!"
+          exit 1
+        fi
     
-    - name: Commit lockfile
+    - name: Commit and push lockfile
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add pnpm-lock.yaml
-        git diff --staged --quiet || git commit -m "Add pnpm-lock.yaml"
-        git push
+        git status
+        git diff --staged --quiet || (git commit -m "Add complete pnpm-lock.yaml" && git push)
