@@ -8,10 +8,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@studyai/types": "workspace:*"
+    "@studyai/types": "*"
   },
   "devDependencies": {
-    "@studyai/config": "workspace:*",
+    "@studyai/config": "*",
     "typescript": "^5.4.0"
   }
 }

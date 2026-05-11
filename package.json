@@ -20,7 +20,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
   },
   "devDependencies": {
-    "@studyai/config": "workspace:*",
+    "@studyai/config": "*",
     "prettier": "^3.3.0",
     "turbo": "^2.0.0"
   },
