@@ -42,7 +42,7 @@ export function DesafioOrganizacao({ desafio, onComplete, onSkip }: DesafioOrgan
       </CardHeader>
 
       <CardContent className="space-y-4">
-        <!-- Progresso das etapas -->
+        {/* Progresso das etapas */}
         <div className="flex gap-1">
           {etapas.map((_, index) => (
             <div
@@ -54,7 +54,7 @@ export function DesafioOrganizacao({ desafio, onComplete, onSkip }: DesafioOrgan
           ))}
         </div>
 
-        <!-- Conteúdo da etapa atual -->
+        {/* Conteúdo da etapa atual */}
         <div className="bg-muted/50 p-4 rounded-lg">
           <span className="text-xs font-medium text-accent uppercase">
             {etapas[etapa]?.titulo}
@@ -62,7 +62,7 @@ export function DesafioOrganizacao({ desafio, onComplete, onSkip }: DesafioOrgan
           <p className="mt-1">{etapas[etapa]?.conteudo}</p>
         </div>
 
-        <!-- Navegação entre etapas -->
+        {/* Navegação entre etapas */}
         {etapa < etapas.length - 1 ? (
           <Button onClick={() => setEtapa(etapa + 1)} className="w-full">
             Próxima Dica 💡
@@ -97,7 +97,7 @@ export function DesafioOrganizacao({ desafio, onComplete, onSkip }: DesafioOrgan
 
             {mostrarDica && (
               <div className="bg-accent/10 p-3 rounded-lg text-sm">
-                <span className="font-medium">Exemplo de resposta criativa:\u003c/span>
+                <span className="font-medium">Exemplo de resposta criativa:</span>
                 <p className="text-muted-foreground mt-1">{desafio.exemplo_de_resposta_criativa}</p>
               </div>
             )}

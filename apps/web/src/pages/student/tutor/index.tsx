@@ -212,17 +212,17 @@ export function TutorPage() {
       </div>
 
       <div className="flex gap-4 flex-1">
-        <!-- Sidebar com tracker de missões -->
+        {/* Sidebar com tracker de missões */}
         {aulaAtiva && (
           <div className="w-64 hidden lg:block">
             <AulaAtivaTracker missoes={missoesExemplo} missaoAtual={missaoAtual} />
           </div>
         )}
 
-        <!-- Chat principal -->
+        {/* Chat principal */}
         <Card className="flex-1 flex flex-col">
           <CardContent className="flex-1 flex flex-col p-0">
-            <!-- Messages -->
+            {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.map((message) => (
                 <div key={message.id}>
@@ -231,8 +231,7 @@ export function TutorPage() {
                   >
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
                       message.role === 'assistant' ? 'bg-primary' : 'bg-muted'
-                    }`}
-003e
+                    }`}>
                       {message.role === 'assistant' ? (
                         <Bot className="h-4 w-4 text-white" />
                       ) : (
@@ -244,13 +243,12 @@ export function TutorPage() {
                       message.role === 'assistant' 
                         ? 'bg-muted' 
                         : 'bg-primary text-primary-foreground'
-                    }`}
-003e
+                    }`}>
                       <p className="text-sm whitespace-pre-line">{message.content}</p>
                     </div>
                   </div>
 
-                  <!-- Renderizar componentes especiais -->
+                  {/* Renderizar componentes especiais */}
                   {message.tipo === 'foco' && message.metadata && (
                     <div className="mt-4">
                       <Foco5Min
@@ -326,7 +324,7 @@ export function TutorPage() {
               <div ref={messagesEndRef} />
             </div>
 
-            <!-- Input -->
+            {/* Input */}
             <div className="border-t p-4">
               <div className="flex gap-2">
                 <Button variant="outline" size="icon">
