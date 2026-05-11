@@ -4,6 +4,8 @@ import { StudentLogin, TeacherLogin, InstitutionLogin, GovernmentLogin } from '.
 import { StudentDashboard } from './pages/student/dashboard'
 import { TutorPage } from './pages/student/tutor'
 import { FazedoresPage } from './pages/student/fazedores'
+import { CadernoPage } from './pages/student/caderno'
+import { FlashcardsPage } from './pages/student/flashcards'
 import { TeacherDashboard } from './pages/teacher/dashboard'
 import { InstitutionDashboard } from './pages/institution/dashboard'
 import { GovernmentDashboard } from './pages/government/dashboard'
@@ -35,6 +37,8 @@ export const router = createBrowserRouter([
           { path: '', element: <StudentDashboard /> },
           { path: 'tutor', element: <TutorPage /> },
           { path: 'fazedores', element: <FazedoresPage /> },
+          { path: 'caderno', element: <CadernoPage /> },
+          { path: 'flashcards', element: <FlashcardsPage /> },
         ],
       },
       {
