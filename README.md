@@ -34,6 +34,19 @@ Democratizar educação de altíssima qualidade no Brasil, unificando aluno, pro
 └── docs/              # Documentação
 ```
 
+## Documentação
+
+- [Arquitetura](./docs/ARCHITECTURE.md) - Visão geral da arquitetura
+- [API](./docs/API.md) - Documentação completa da API
+- [Deploy](./docs/DEPLOY.md) - Guia de deploy no Railway
+- [Módulos](./docs/MODULES.md) - Documentação dos módulos
+- [Cache](./docs/CACHE_STRATEGY.md) - Estratégia de cache
+- [Design System](./docs/DESIGN_SYSTEM.md) - Sistema de design
+- [AI Models](./docs/AI_MODELS.md) - Modelos de IA utilizados
+- [Módulo Fazedores](./docs/MODULO_FAZEDORES.md) - Sistema de aprendizado ativo
+- [Contribuição](./docs/CONTRIBUTING.md) - Como contribuir
+- [Troubleshooting](./docs/TROUBLESHOOTING.md) - Solução de problemas
+
 ## Primeiros Passos
 
 ### 1. Instalar dependências
@@ -73,22 +86,54 @@ pnpm db:seed
 pnpm dev
 ```
 
+Acesse:
+- Web: http://localhost:5173
+- API: http://localhost:3000
+- API Docs: http://localhost:3000/api/v1/docs
+
 ## Scripts Disponíveis
 
 - `pnpm dev` - Inicia todos os serviços em modo desenvolvimento
 - `pnpm build` - Compila todos os pacotes
 - `pnpm lint` - Executa lint em todos os pacotes
+- `pnpm typecheck` - Verifica tipos TypeScript
 - `pnpm db:migrate` - Executa migrações do banco
 - `pnpm db:seed` - Popula o banco com dados iniciais
 - `pnpm db:studio` - Abre o Drizzle Studio
+- `pnpm db:generate` - Gera novas migrações
+- `pnpm clean` - Limpa node_modules e builds
+- `pnpm format` - Formata código com Prettier
 
 ## Módulos
 
-- **Aluno**: Tutor IA (Tiagão), Caderno Digital, Flashcards, Simulados, Redação
-- **Professor**: Gestão de Turmas, Banco de Questões, Gerador de Provas, Planos de Aula
-- **Instituição**: Dashboard, Métricas, Gestão de Professores/Alunos
-- **Governo**: Métricas de Rede, Relatórios Consolidados
-- **Admin**: Gestão de Usuários, Override de Papéis
+### Aluno
+- **Tutor IA (Tiagão)**: Chat inteligente com 22 ferramentas
+- **Caderno Digital**: Anotações com OCR e busca
+- **Flashcards**: Repetição espaçada
+- **Simulados**: Provas práticas com correção
+- **Redação**: Correção ENEM com IA
+- **Módulo Fazedores**: Aprendizado ativo gamificado
+
+### Professor
+- **Gestão de Turmas**: Administração de alunos
+- **Banco de Questões**: Repositório organizado
+- **Gerador de Provas**: Criação automática
+- **Planos de Aula**: Templates com IA
+
+### Instituição
+- **Dashboard**: Métricas de engajamento
+- **Gestão**: Professores e alunos
+- **Relatórios**: Análises consolidadas
+
+### Governo
+- **Rede Escolar**: Visão macro
+- **Indicadores**: IDEB, ENEM, evasão
+- **Relatórios**: Dados consolidados
+
+### Admin
+- **Gestão de Usuários**: Controle completo
+- **Assinaturas**: Planos e pagamentos
+- **Monitoramento**: Saúde do sistema
 
 ## Paleta de Cores
 
@@ -99,10 +144,19 @@ pnpm dev
 
 ## Contribuição
 
-1. Crie uma branch: `git checkout -b feature/nome`
-2. Faça commit: `git commit -m "feat: descrição"`
-3. Push: `git push origin feature/nome`
-4. Abra um Pull Request
+1. Leia o [guia de contribuição](./docs/CONTRIBUTING.md)
+2. Crie uma branch: `git checkout -b feature/nome`
+3. Faça commit: `git commit -m "feat: descrição"`
+4. Push: `git push origin feature/nome`
+5. Abra um Pull Request
+
+## Deploy
+
+Veja o [guia de deploy](./docs/DEPLOY.md) para instruções detalhadas de deploy no Railway.
+
+## Troubleshooting
+
+Encontrou algum problema? Consulte o [guia de troubleshooting](./docs/TROUBLESHOOTING.md).
 
 ## Licença
 
