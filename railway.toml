@@ -1,5 +1,6 @@
 [build]
 builder = "NIXPACKS"
+buildCommand = "npm install && npm run build"
 
 [deploy]
 startCommand = "node apps/api/dist/index.js"
@@ -40,6 +41,7 @@ restartPolicyMaxRetries = 3
 
 [env]
 NODE_ENV = "production"
+NIXPACKS_PM = "npm"
 
 [[ports]]
 port = 3000
