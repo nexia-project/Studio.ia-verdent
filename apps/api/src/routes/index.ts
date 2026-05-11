@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { authRouter } from './auth.routes';
 import { webhooksRouter } from './webhooks.routes';
 import { tutorRouter } from './tutor.routes';
+import { tutorModulosRouter } from './tutor-modulos.routes';
 import { studyRouter } from './study.routes';
 import { teacherRouter } from './teacher.routes';
 import { institutionRouter } from './institution.routes';
@@ -20,6 +21,7 @@ router.get('/health', (req, res) => {
 router.use('/auth', authRouter);
 router.use('/webhooks', webhooksRouter);
 router.use('/tutor', tutorRouter);
+router.use('/tutor', tutorModulosRouter); // Novos módulos do Tiagão
 router.use('/study', studyRouter);
 router.use('/teacher', teacherRouter);
 router.use('/institution', institutionRouter);
