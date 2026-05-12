@@ -1,16 +1,17 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
 import { authMiddleware } from '../middlewares/auth';
 import { loadUserMiddleware } from '../middlewares/roles';
 import { env } from '../config/env';
 import Stripe from 'stripe';
 
 const router = Router();
+const auth = authMiddleware as any;
 const stripe = new Stripe(env.STRIPE_SECRET_KEY, { apiVersion: '2024-04-10' });
 
-router.use(authMiddleware, loadUserMiddleware);
+router.use(auth, loadUserMiddleware);
 
 // Get subscription status
-router.get('/status', async (req, res) => {
+router.get('/status', async (req: Request, res: Response) => {
   res.json({ 
     plan: req.user?.plan || 'free',
     status: 'active'
@@ -18,7 +19,7 @@ router.get('/status', async (req, res) => {
 });
 
 // Create checkout session
-router.post('/checkout', async (req, res) => {
+router.post('/checkout', async (req: Request, res: Response) => {
   try {
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
@@ -41,7 +42,7 @@ router.post('/checkout', async (req, res) => {
 });
 
 // Customer portal
-router.post('/portal', async (req, res) => {
+router.post('/portal', async (req: Request, res: Response) => {
   try {
     // Get customer ID from user
     const session = await stripe.billingPortal.sessions.create({

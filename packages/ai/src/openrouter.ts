@@ -1,4 +1,5 @@
 import OpenAI from 'openai';
+import type { ChatCompletionMessageParam, ChatCompletionTool, FunctionParameters } from 'openai/resources/chat/completions';
 import { env } from './config';
 
 const openai = new OpenAI({
@@ -11,10 +12,9 @@ const openai = new OpenAI({
 });
 
 export interface ChatMessage {
-  role: 'system' | 'user' | 'assistant' | 'tool';
+  role: 'system' | 'user' | 'assistant';
   content: string;
   name?: string;
-  tool_calls?: ToolCall[];
 }
 
 export interface ToolCall {
@@ -40,17 +40,17 @@ export interface ToolDefinition {
   function: {
     name: string;
     description: string;
-    parameters: object;
+    parameters: FunctionParameters;
   };
 }
 
 export async function createCompletion(options: CompletionOptions) {
   const response = await openai.chat.completions.create({
     model: options.model,
-    messages: options.messages,
+    messages: options.messages as ChatCompletionMessageParam[],
     temperature: options.temperature ?? 0.7,
     max_tokens: options.max_tokens,
-    tools: options.tools,
+    tools: options.tools as ChatCompletionTool[] | undefined,
     stream: options.stream ?? false,
   });
 
@@ -60,10 +60,10 @@ export async function createCompletion(options: CompletionOptions) {
 export async function* streamCompletion(options: CompletionOptions) {
   const stream = await openai.chat.completions.create({
     model: options.model,
-    messages: options.messages,
+    messages: options.messages as ChatCompletionMessageParam[],
     temperature: options.temperature ?? 0.7,
     max_tokens: options.max_tokens,
-    tools: options.tools,
+    tools: options.tools as ChatCompletionTool[] | undefined,
     stream: true,
   });
 
@@ -84,7 +84,7 @@ export async function callLLM({
     messages: [
       { role: 'system', content: system },
       ...messages,
-    ] as any,
+    ] as ChatCompletionMessageParam[],
   });
   return response.choices[0]?.message?.content ?? '';
 }

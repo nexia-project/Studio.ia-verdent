@@ -1,16 +1,17 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
 import { authMiddleware } from '../middlewares/auth';
 import { loadUserMiddleware } from '../middlewares/roles';
 import { callLLM } from '@studyai/ai';
 import { SYSTEM_MODULO_FAZEDORES } from '@studyai/ai/prompts/modulo-fazedores';
 
 const router = Router();
+const auth = authMiddleware as any;
 
-router.use(authMiddleware, loadUserMiddleware);
+router.use(auth, loadUserMiddleware);
 
 // POST /api/v1/fazedores
 // Endpoint unificado para todos os modos do Módulo Fazedores
-router.post('/', async (req, res) => {
+router.post('/', async (req: Request, res: Response) => {
   try {
     const {
       modo,           // 'DESAFIO_UNICO' | 'SERIE_DESAFIOS' | 'PLANO_MODULO'
@@ -85,7 +86,7 @@ Siga rigorosamente as regras do prompt de sistema.
 
 // POST /api/v1/fazedores/responder
 // Para o aluno enviar resposta a um desafio
-router.post('/responder', async (req, res) => {
+router.post('/responder', async (req: Request, res: Response) => {
   try {
     const { 
       desafioId, 
@@ -157,7 +158,7 @@ Responda em JSON:
 
 // GET /api/v1/fazedores/exemplos
 // Retorna exemplos de chamadas para o frontend
-router.get('/exemplos', (req, res) => {
+router.get('/exemplos', (req: Request, res: Response) => {
   res.json({
     exemplos: [
       {

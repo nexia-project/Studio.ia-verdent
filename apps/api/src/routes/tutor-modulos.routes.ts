@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
 import { authMiddleware } from '../middlewares/auth';
 import { loadUserMiddleware } from '../middlewares/roles';
 import { callLLM } from '@studyai/ai';
@@ -10,11 +10,12 @@ import {
 } from '@studyai/ai/prompts/tiagao-aula-ativa';
 
 const router = Router();
+const auth = authMiddleware as any;
 
-router.use(authMiddleware, loadUserMiddleware);
+router.use(auth, loadUserMiddleware);
 
 // POST /api/v1/tutor/aula-ativa
-router.post('/aula-ativa', async (req, res) => {
+router.post('/aula-ativa', async (req: Request, res: Response) => {
   try {
     const {
       historico = [],
@@ -54,7 +55,7 @@ router.post('/aula-ativa', async (req, res) => {
 });
 
 // POST /api/v1/tutor/desafio-organizacao
-router.post('/desafio-organizacao', async (req, res) => {
+router.post('/desafio-organizacao', async (req: Request, res: Response) => {
   try {
     const { topico, contextoAluno } = req.body as {
       topico: string;
@@ -117,7 +118,7 @@ Responda APENAS em JSON válido:
 });
 
 // POST /api/v1/tutor/foco-5min
-router.post('/foco-5min', async (req, res) => {
+router.post('/foco-5min', async (req: Request, res: Response) => {
   try {
     const { topico, nivel } = req.body as {
       topico: string;
