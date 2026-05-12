@@ -2,6 +2,10 @@
   "name": "studyai",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
