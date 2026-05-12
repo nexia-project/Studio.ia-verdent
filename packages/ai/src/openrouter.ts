@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import type { ChatCompletionMessageParam, ChatCompletionTool, FunctionParameters } from 'openai/resources/chat/completions';
+import type { ChatCompletionMessageParam, ChatCompletionTool } from 'openai/resources/chat/completions';
 import { env } from './config';
 
 const openai = new OpenAI({
@@ -40,7 +40,7 @@ export interface ToolDefinition {
   function: {
     name: string;
     description: string;
-    parameters: FunctionParameters;
+    parameters: Record<string, unknown>;
   };
 }
 
