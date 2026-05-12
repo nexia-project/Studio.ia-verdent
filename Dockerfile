@@ -2,14 +2,20 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
-
+# Copy everything
 COPY . .
 
-# Build the frontend
-RUN cd apps/web && npm install && npm run build
+# Install root dependencies
+RUN npm install
 
-EXPOSE 3000
+# Install web app dependencies and build
+WORKDIR /app/apps/web
+RUN npm install
+RUN npm run build
+
+# Go back to root
+WORKDIR /app
+
+EXPOSE 8080
 
 CMD ["node", "server.js"]
