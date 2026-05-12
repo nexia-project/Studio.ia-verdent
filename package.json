@@ -2,30 +2,12 @@
   "name": "studyai",
   "version": "1.0.0",
   "private": true,
-  "description": "StudyAI - Plataforma de ensino com IA",
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck",
-    "db:migrate": "turbo run db:migrate",
-    "db:seed": "turbo run db:seed",
-    "db:generate": "turbo run db:generate",
-    "db:studio": "turbo run db:studio",
-    "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "start": "node server.js",
+    "dev": "node server.js"
   },
-  "devDependencies": {
-    "@studyai/config": "*",
-    "prettier": "^3.3.0",
-    "turbo": "^2.0.0"
-  },
-  "packageManager": "npm@10.8.2",
-  "engines": {
-    "node": ">=20.0.0"
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
   }
 }
