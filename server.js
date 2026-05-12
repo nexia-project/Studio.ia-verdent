@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,14 @@ app.get('/api/v1/health', (req, res) => {
 // API routes
 app.get('/api/v1', (req, res) => {
   res.json({ message: 'StudyAI API is running!' });
+});
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'apps/web/dist')));
+
+// The "catchall" handler: for any request that doesn't match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'apps/web/dist', 'index.html'));
 });
 
 app.listen(PORT, () => {
