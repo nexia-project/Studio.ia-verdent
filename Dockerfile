@@ -2,19 +2,19 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy everything
+COPY package*.json ./
+COPY apps/web/package.json apps/web/
+COPY packages/config/package.json packages/config/
+COPY packages/sdk/package.json packages/sdk/
+COPY packages/types/package.json packages/types/
+COPY packages/ai/package.json packages/ai/
+COPY packages/db/package.json packages/db/
+
+RUN npm install
+
 COPY . .
 
-# Install root dependencies
-RUN npm install
-
-# Install web app dependencies and build
-WORKDIR /app/apps/web
-RUN npm install
-RUN npm run build
-
-# Go back to root
-WORKDIR /app
+RUN npm run build --workspace=apps/web
 
 EXPOSE 8080
 
