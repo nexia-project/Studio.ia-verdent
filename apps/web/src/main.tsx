@@ -15,7 +15,11 @@ const queryClient = new QueryClient({
   },
 })
 
-const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || ''
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || 'pk_test_c3R1ZHlpbmctb3dsLTg0LmNsZXJrLmFjY291bnRzLmRldiQ'
+
+if (!clerkPubKey) {
+  console.warn('VITE_CLERK_PUBLISHABLE_KEY não definida. Usando chave de teste.')
+}
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
